@@ -1,0 +1,248 @@
+/* essa é a forma como comentamos no css*/
+/*soft reset do css*/
+
+/* fontes do google
+font-family: 'Alfa Slab One', cursive;
+font-family: 'Bungee', cursive;
+font-family: 'Roboto Slab', serif;*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    background-image: url('https://image.freepik.com/fotos-gratis/fundo-azul-marinho-de-tecido-de-feltro_113767-1020.jpg');
+    background-size: auto 100vh;
+    height: 100vh;
+    font-family: 'Roboto Slab', serif;
+    
+}
+
+/* se a tela tiver pelo menos 400px vai carregar estes estilos */
+/* qualquer coisa pode ser feita quando muda o tamanho da tela, QUALQUER*/
+@media (min-width: 400px) {
+  body{
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 600px) {
+  body{
+    font-size: 22px;
+  }
+}
+
+header {
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+  
+.menu {
+  background-color: whitesmoke;
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  z-index: 1;
+}
+  
+.menu ul{
+  display: flex;
+  justify-content: space-around;
+}
+  
+.menu li {
+  list-style:none;
+}
+
+
+.menu a{
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: teal;
+}
+
+.menu a:active,
+.menu a:hover { 
+  background-color: teal;
+  color: whitesmoke; 
+  transition: background-color 1s, color 1s;
+}
+
+.titulo{
+  transform: scale(0.2) translateY(30vh);
+  opacity: 0;
+
+  animation: linear 2s animatitulo forwards;
+}
+
+@keyframes animatitulo{
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+  
+.site-subtitle,
+.site-title{
+  color: whitesmoke;
+  text-align: center;
+}
+  
+.site-title {
+  font-size: 2em;
+  font-family: 'Alfa Slab One', cursive;
+  text-shadow: 1px 1px 6px black;
+  transition: transform 500ms;
+}
+
+.site-title:hover {
+  transform: scale(1.1);
+}
+
+.site-subtitle {
+  font-style: none;
+  font-family: 'Bungee', cursive;
+  text-shadow:1px 1px 3px black;
+}
+
+.sobre,
+.portfolio,
+.contato {
+  padding: 2em;
+  color: whitesmoke;
+}
+
+@media (min-width: 1200px) {
+  .container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  }
+}
+
+.sobre h2,
+.portfolio h2,
+.contato h2{
+  font-family: 'Bungee', cursive;
+  margin-bottom: 3em;
+  text-shadow:1px 1px 3px black;
+}
+
+.sobre p {
+  text-indent: 2em;
+  margin-bottom: 1em;
+  text-align: justify;
+}
+
+.sobre a{
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+.sobre a:hover{
+  background-color: whitesmoke;
+  color: teal;
+}
+
+.sobre .avatar{
+  float: right;
+  margin-left: 2em;
+}
+
+.sobre .avatar img{
+  clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+}
+
+@media (max-width: 550px) {
+  .sobre .avatar img{
+    clip-path: polygon(100% 0, 100% 50%, 50% 90%, 0 50%, 0 0, 50% 16%);
+  }
+  .sobre .avatar{
+    float: none;
+  }
+}
+
+.portfolio .grid{
+  display: grid;
+  gap: 2em;
+}
+
+.img-portfolio {
+  width: 240px;
+  height: 180px;
+  object-fit: cover;
+  object-position: left;
+  border-radius: 10px;
+  transition: transform 500ms;
+} 
+
+.img-portfolio:hover{
+  transform: scale(1.2);
+}
+
+
+/*.card {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+.card:hover{
+  transform: rotateY(180deg);
+}*/
+
+
+/*.card-frente,
+.card-tras{
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.card-tras{
+  background-color: whitesmoke;
+  height: 180px;
+  width: 240px;
+  transform: rotateY(180deg);
+}*/
+
+.portfolio figure {
+  text-align: center;
+}
+
+@media (min-width: 560px) {
+  .portfolio .grid{
+    grid-template-columns: 50% 50%;
+}
+}
+
+@media (min-width: 880px){
+  .portfolio .grid{
+    grid-template-columns: repeat(3, 260px);
+    align-content: center;
+    justify-content: center;
+    height: calc(100vh - 7em - 48px)
+}
+}
+
+.contato .icons{
+  text-align: center;
+}
+
+.contato a {
+  font-size: 6em;
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+.contato a:active,
+.contato a:hover{
+  text-decoration: none;
+  text-shadow:0px 0px 10px whitesmoke;
+  transition:text-shadow 300ms;
+}
